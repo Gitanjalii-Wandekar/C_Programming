@@ -4,19 +4,27 @@
     Input :10   18
     Output : 10 11  12  13  14  15  16  17  18  
     
-    Input : -10    -2
+    Input : -10    2
     Output : -10  -9    -8  -7  -6  -5  -4  -3  -2  -1  0   1   2
+
+    Input : 90  18
+    Output :  Invalid Range
 
 */ 
 #include<stdio.h>
 void RangeDisplay(int iNo1, int iNo2)
 {
+    if(iNo2 < iNo1)
+    {
+        printf("Invalid Range");
+    }
+
     for(int i = iNo1 ; i <= iNo2; i++)
     {
         printf("%d\t", i);
     }
-    printf("\n");
 
+    printf("\n");
 }
 int main()
 {
