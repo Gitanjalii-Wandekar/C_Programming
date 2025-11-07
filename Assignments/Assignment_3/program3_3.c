@@ -1,19 +1,19 @@
-/* Input : 7
-    Output :    2   4   6   8   10  12  14
+/* Input : 36
+    Output :  2  6  12  
 */
 
 #include<stdio.h>
-void PrintEven(int iNo)
+void DisplayEvenFactorial(int iNo)
 {
     if(iNo <= 0)
     {
         return;
     }
-    printf("Even numbers up to %d are :\n", iNo);
+    printf("Even Factorial of %d are :\n", iNo);
 
     for(int i = 1 ;i <= iNo ;i++)
         {
-            if(i % 2 ==0)
+            if(iNo % i == 0  && i % 2 == 0 )
             {
                 printf("%d\t",i);
             }
@@ -27,7 +27,7 @@ int main()
     printf("Enter number:");
     scanf("%d", &iValue);
 
-    PrintEven(iValue);
+    DisplayEvenFactorial(iValue);
 
     return 0;
 }
