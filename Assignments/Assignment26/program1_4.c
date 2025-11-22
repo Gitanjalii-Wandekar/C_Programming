@@ -1,16 +1,14 @@
 //Input : 5
-//Output :  A   B   C   D   E
+//Output :  #   1   *   #   2   *   #   3   *   #   4   *   #   5   *
 
 #include<stdio.h>
 
 void Pattern(int iNo)
 {
     int iCnt = 0;
-    int ch = 'A';
     for(iCnt = 1 ; iCnt <= iNo ; iCnt++)
     {
-        printf("%c\t" , ch);
-        ch++;
+        printf("#\t%d\t*\t", iCnt);
     }
 }
 
@@ -19,7 +17,7 @@ int main()
     int iValue = 0;
 
     printf("Enter number:");
-    scanf("%d\n" , &iValue);
+    scanf("%d" , &iValue);
 
     Pattern(iValue);
 
