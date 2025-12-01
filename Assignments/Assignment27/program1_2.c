@@ -1,8 +1,8 @@
 /*
-    *   *   *   *
-    *   *   *   *
-    *   *   *   *   
-    *   *   *   *   
+   1    2   3
+   1    2   3
+   1    2   3
+   1    2   3
 */ 
 
 #include<stdio.h>
@@ -12,9 +12,9 @@ void Pattern(int iRow , int iCol)
 
    for(i = 1; i<= iRow ; i++)
    {
-    for(j = 1 ; j <= iCol ; j++)
+    for(j = 1 ; j <= iCol; j++)
     {
-        printf("*\t");
+        printf("%d\t", j);
     }
     printf("\n");
    }
@@ -33,3 +33,7 @@ int main()
 
     return 0;
 }
+
+
+
+
