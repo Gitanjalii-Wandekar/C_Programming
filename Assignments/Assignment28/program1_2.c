@@ -1,8 +1,8 @@
 /*
     A   B   C   D
+    a   b   c   d
     A   B   C   D
-    A   B   C   D
-    A   B   C   D
+    a   b   c   d
     
 */ 
 
@@ -11,12 +11,20 @@ void Pattern(int iRow , int iCol)
 {
    int i = 0, j= 0;
    char ch = '\0';
+   char ch1 = '\0';
 
-   for(i = 1; i<= iRow ; i++)
+   for(i = 1 ; i<= iRow ; i++)
    {
-    for(j = 1, ch = 'A'; j <= iCol ; j++, ch++)
+    for(j = 1, ch = 'a' , ch1 = 'A', ch1; j <= iCol ; j++, ch++, ch1++)
     {
-       printf("%c\t", ch);
+       if((i % 2) == 0)
+       {
+        printf("%c\t", ch);
+       }
+       else
+       {
+        printf("%c\t",ch1);
+       }
     }
     printf("\n");
    }

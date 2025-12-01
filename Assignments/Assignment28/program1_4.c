@@ -1,22 +1,20 @@
 /*
-    A   B   C   D
-    A   B   C   D
-    A   B   C   D
-    A   B   C   D
-    
+   4  4  4  4  4
+   3  3  3  3  3
+   2  2  2  2  2
+   1  1  1  1  1
 */ 
 
 #include<stdio.h>
 void Pattern(int iRow , int iCol)
 {
    int i = 0, j= 0;
-   char ch = '\0';
 
-   for(i = 1; i<= iRow ; i++)
+   for(i = iRow; i >= 1 ; i--)
    {
-    for(j = 1, ch = 'A'; j <= iCol ; j++, ch++)
+    for(j = 1; j <= iCol ; j++)
     {
-       printf("%c\t", ch);
+       printf("%d\t",i);
     }
     printf("\n");
    }

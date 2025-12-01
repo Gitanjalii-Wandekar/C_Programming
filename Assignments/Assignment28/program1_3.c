@@ -1,9 +1,7 @@
 /*
-    A   B   C   D
-    A   B   C   D
-    A   B   C   D
-    A   B   C   D
-    
+   A    A   A   A   A
+   B    B   B   B   B
+   C    C   C   C   C
 */ 
 
 #include<stdio.h>
@@ -14,9 +12,11 @@ void Pattern(int iRow , int iCol)
 
    for(i = 1; i<= iRow ; i++)
    {
-    for(j = 1, ch = 'A'; j <= iCol ; j++, ch++)
+    ch = 'A';
+    for(j = 1; j <= iCol ; j++)
     {
        printf("%c\t", ch);
+        ch++;
     }
     printf("\n");
    }
