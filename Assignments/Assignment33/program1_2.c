@@ -1,10 +1,10 @@
-/* Accept Character from user and check whether it is alphabet or not(A-Z-a-z)
+/* Accept Character from user and check whether it is capital or not
  
 Input : F
 
 Output : TRUE
 
-Input : &
+Input : d
 
 Output : False
 
@@ -18,10 +18,9 @@ Output : False
 
 typedef int Bool;
 
-bool ChkAlpha(char ch)
-
+bool ChkCapital(char ch)
 {
-    if((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z'))
+    if(ch >= 'A' && ch <= 'Z')
     {
         return TRUE;
     }
@@ -44,11 +43,11 @@ int main()
 
     if(bRet == true)
     {
-        printf("It is Character");
+        printf("It is Capital");
     }
     else
     {
-        printf("It is not a Character");
+        printf("It is not a Capital");
     }
     return 0;
 }

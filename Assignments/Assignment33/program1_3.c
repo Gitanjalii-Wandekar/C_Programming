@@ -1,10 +1,10 @@
-/* Accept Character from user and check whether it is alphabet or not(A-Z-a-z)
+/* Accept Character from user and check whether it is digit or not
  
-Input : F
+Input : 7
 
 Output : TRUE
 
-Input : &
+Input : d
 
 Output : False
 
@@ -18,10 +18,9 @@ Output : False
 
 typedef int Bool;
 
-bool ChkAlpha(char ch)
-
+bool ChkDigit(char ch)
 {
-    if((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z'))
+    if(ch >= '0' && ch <= '9')
     {
         return TRUE;
     }
@@ -30,6 +29,7 @@ bool ChkAlpha(char ch)
         return FALSE;
     }
 }
+
 
 
 int main()
@@ -44,11 +44,11 @@ int main()
 
     if(bRet == true)
     {
-        printf("It is Character");
+        printf("It is Digit");
     }
     else
     {
-        printf("It is not a Character");
+        printf("It is not a Digit");
     }
     return 0;
 }

@@ -1,10 +1,10 @@
-/* Accept Character from user and check whether it is alphabet or not(A-Z-a-z)
+/* Accept Character from user and check whether it is in small case or not
  
-Input : F
+Input : g
 
 Output : TRUE
 
-Input : &
+Input : D
 
 Output : False
 
@@ -18,10 +18,9 @@ Output : False
 
 typedef int Bool;
 
-bool ChkAlpha(char ch)
-
+bool ChkSmall(char ch)
 {
-    if((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z'))
+    if(ch >= 'a' && ch <= 'z')
     {
         return TRUE;
     }
@@ -30,6 +29,7 @@ bool ChkAlpha(char ch)
         return FALSE;
     }
 }
+
 
 
 int main()
@@ -44,11 +44,11 @@ int main()
 
     if(bRet == true)
     {
-        printf("It is Character");
+        printf("It is Small case Character");
     }
     else
     {
-        printf("It is not a Character");
+        printf("It is not a Small case Character");
     }
     return 0;
 }
