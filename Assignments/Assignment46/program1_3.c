@@ -1,4 +1,4 @@
-//Display Greater than X
+//Check whether the list is empty
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -35,20 +35,17 @@ void InsertFirst(PPNODE first, int no)
 
 }
 
-int DisplayGreater(PPNODE first, int X)
+bool IsEmpty(PPNODE first )
 {
-
-    while(*first != NULL)
+    if(*first == NULL)
     {
-        if((*first)->data > X)
-        {
-            printf("%d", (*first)->data);
-        }
-        (*first) = (*first)->next;
+        return true;
     }
-    printf("\n");
+    else
+    {
+        false;
+    }
 }
-
 void Display(PPNODE first)
 {
     while(*first != NULL)
@@ -62,6 +59,7 @@ void Display(PPNODE first)
 int main()
 {
     PNODE head = NULL;
+    bool bRet = false;
 
     InsertFirst(&head, 51);
     InsertFirst(&head, 21);
@@ -69,7 +67,15 @@ int main()
     InsertFirst(&head, 10);
     InsertFirst(&head, 51);
 
-    printf("Greater number than 20 are : %d\n", DisplayGreater(&head, 20));
+    bRet = IsEmpty(&head);
+    if(bRet == true)
+    {
+        printf("List is not empty");
+    }
+    else
+    {
+        printf("List is empty");
+    }
     Display(&head);
 
     return 0;

@@ -1,4 +1,4 @@
-//Display Greater than X
+//Display Less than X
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -34,21 +34,6 @@ void InsertFirst(PPNODE first, int no)
     }
 
 }
-
-int DisplayGreater(PPNODE first, int X)
-{
-
-    while(*first != NULL)
-    {
-        if((*first)->data > X)
-        {
-            printf("%d", (*first)->data);
-        }
-        (*first) = (*first)->next;
-    }
-    printf("\n");
-}
-
 void Display(PPNODE first)
 {
     while(*first != NULL)
@@ -59,6 +44,19 @@ void Display(PPNODE first)
     printf("NULL\n");
 }
 
+int DisplayLesser(PPNODE first, int X)
+{
+
+    while(*first != NULL)
+    {
+        if((*first)->data < X)
+        {
+            printf("%d", (*first)->data);
+        }
+        (*first) = (*first)->next;
+    }
+    printf("\n");
+}
 int main()
 {
     PNODE head = NULL;
@@ -69,7 +67,7 @@ int main()
     InsertFirst(&head, 10);
     InsertFirst(&head, 51);
 
-    printf("Greater number than 20 are : %d\n", DisplayGreater(&head, 20));
+    printf("Lesser number than 20 are : %d\n", DisplayLesser(&head, 20));
     Display(&head);
 
     return 0;

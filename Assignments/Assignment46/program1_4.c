@@ -1,4 +1,4 @@
-//Display Greater than X
+//Replace negative numbers with zero
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -35,20 +35,19 @@ void InsertFirst(PPNODE first, int no)
 
 }
 
-int DisplayGreater(PPNODE first, int X)
+void ReplaceNegative(PPNODE first)
 {
-
-    while(*first != NULL)
+    PNODE temp = *first;
+    while (temp != NULL)
     {
-        if((*first)->data > X)
+        if(temp->data < 0)
         {
-            printf("%d", (*first)->data);
+            temp->data = 0;
         }
-        (*first) = (*first)->next;
+        temp = temp->next;
     }
-    printf("\n");
+    
 }
-
 void Display(PPNODE first)
 {
     while(*first != NULL)
@@ -67,9 +66,10 @@ int main()
     InsertFirst(&head, 21);
     InsertFirst(&head, 11);
     InsertFirst(&head, 10);
-    InsertFirst(&head, 51);
+    InsertFirst(&head, -11);
 
-    printf("Greater number than 20 are : %d\n", DisplayGreater(&head, 20));
+    ReplaceNegative(&head);
+    printf("After Replacing the negative  elements:\n");
     Display(&head);
 
     return 0;

@@ -1,4 +1,4 @@
-//Display Greater than X
+//Increment each node value by 1
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -35,20 +35,16 @@ void InsertFirst(PPNODE first, int no)
 
 }
 
-int DisplayGreater(PPNODE first, int X)
+void IncrementAll(PPNODE first)
 {
+    PNODE temp = *first;
 
-    while(*first != NULL)
+    while(temp != NULL)
     {
-        if((*first)->data > X)
-        {
-            printf("%d", (*first)->data);
-        }
-        (*first) = (*first)->next;
+        temp->data = temp->data + 1;
+        temp = temp->next;
     }
-    printf("\n");
 }
-
 void Display(PPNODE first)
 {
     while(*first != NULL)
@@ -69,7 +65,8 @@ int main()
     InsertFirst(&head, 10);
     InsertFirst(&head, 51);
 
-    printf("Greater number than 20 are : %d\n", DisplayGreater(&head, 20));
+    IncrementAll(&head);
+    printf("After incrementing all elements:\n");
     Display(&head);
 
     return 0;
