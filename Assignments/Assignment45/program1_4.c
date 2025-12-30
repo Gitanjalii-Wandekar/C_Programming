@@ -1,4 +1,4 @@
-//Search an element
+//Count Frequency of the given number
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -35,17 +35,19 @@ void InsertFirst(PPNODE first, int no)
 
 }
 
-bool Search(PPNODE first, int no)
+int CountFrequency(PPNODE first, int no)
 {
+    int count = 0;
+
     while(*first != NULL)
     {
         if((*first)->data == no)
         {
-            return true;
+            count++;
         }
-        (*first) = (*first)->next;
+         (*first) = (*first)->next;
     }
-    return false;
+    return count;
 }
 int main()
 {
@@ -55,9 +57,9 @@ int main()
     InsertFirst(&head, 21);
     InsertFirst(&head, 11);
     InsertFirst(&head, 10);
-    InsertFirst(&head, 1);
+    InsertFirst(&head, 51);
 
-    printf("Search 51: %d\n", Search(&head, 51));
+    printf("Even Count : %d\n", CountFrequency(&head, 51));
 
     return 0;
 }
