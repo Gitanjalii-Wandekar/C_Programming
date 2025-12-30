@@ -1,4 +1,4 @@
-//Search an element
+//Count odd numbers
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -35,17 +35,19 @@ void InsertFirst(PPNODE first, int no)
 
 }
 
-bool Search(PPNODE first, int no)
+int CountOdd(PPNODE first)
 {
+    int count = 0;
+
     while(*first != NULL)
     {
-        if((*first)->data == no)
+        if(((*first)->data % 2) != 0)
         {
-            return true;
+            count++;
         }
-        (*first) = (*first)->next;
+         (*first) = (*first)->next;
     }
-    return false;
+    return count;
 }
 int main()
 {
@@ -57,7 +59,7 @@ int main()
     InsertFirst(&head, 10);
     InsertFirst(&head, 1);
 
-    printf("Search 51: %d\n", Search(&head, 51));
+    printf("Even Count : %d\n", CountOdd(&head));
 
     return 0;
 }
